@@ -2,13 +2,13 @@ import Debug from "debug";
 
 const debug = Debug("news-backend-app:errors");
 
-const notFoundError = (req, res) => {
+const notFoundError = (_req, res) => {
   res
     .status(404)
     .json({ error: true, message: "Error 404, endpoint not found" });
 };
 
-const internatServerError = (err, req, res, next) => {
+const internatServerError = (err, _req, res, _next) => {
   debug(`Error: ${err.message}`);
   const errorCode = err.status ?? 500;
   const errorMessage = err.message ?? "Internal server error";

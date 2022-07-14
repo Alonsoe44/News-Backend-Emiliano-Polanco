@@ -1,6 +1,6 @@
 import NewsModel from "../../database/models/NewsModel";
 
-const getNewsController = async (req, res, next) => {
+const getNewsController = async (_req, res, next) => {
   try {
     const news = await NewsModel.find();
     res.json(news);
