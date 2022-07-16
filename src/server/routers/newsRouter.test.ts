@@ -23,8 +23,7 @@ beforeEach(async () => {
     title: "Test news",
     description: "Test description",
     content: "Test content",
-    date: " 2020-01-01",
-    archiveDate: "2024-01-01",
+    date: "2020-02-02",
     author: "Test author",
   } as NewsInterface);
 
@@ -69,7 +68,7 @@ describe("Given a /news/:id endpoint", () => {
         title: "Test news",
         description: "Test description",
         content: "Test content",
-        date: "2019-12-31T23:00:00.000Z",
+        date: "2020-02-02T00:00:00.000Z",
         archiveDate: "1900-01-01T00:00:00.000Z",
         author: "Test author",
       };
@@ -78,6 +77,8 @@ describe("Given a /news/:id endpoint", () => {
         .patch(`/news/${snippedId}`)
         .send(editionObject)
         .expect(200);
+
+      console.log(body);
 
       expect(body).toMatchObject(newEditedNews);
     });
