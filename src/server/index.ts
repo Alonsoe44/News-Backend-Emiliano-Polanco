@@ -8,8 +8,9 @@ import { internatServerError, notFoundError } from "./middlewares/errors";
 import newsRouter from "./routers/newsRouter";
 
 const app = express();
-
+app.use(express.json());
 app.use("/news", newsRouter);
+
 app.use(notFoundError);
 app.use(internatServerError);
 export default app;

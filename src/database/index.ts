@@ -5,7 +5,7 @@ const debug = Debug("news-backend-app:database");
 
 const connectDatabase = (connectionCredentials: string) =>
   new Promise((resolve, reject) => {
-    mongoose.set("debug", true);
+    mongoose.set("debug", false);
     mongoose.connect(connectionCredentials, (error) => {
       if (error) {
         debug(`Oh no the database couldn't start: ${error}`);

@@ -15,7 +15,7 @@ const NewsSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
+    default: Date.now(),
   },
   author: {
     type: String,
@@ -23,7 +23,6 @@ const NewsSchema = new Schema({
   },
   archiveDate: {
     type: Date,
-    default: "none",
   },
 });
 
