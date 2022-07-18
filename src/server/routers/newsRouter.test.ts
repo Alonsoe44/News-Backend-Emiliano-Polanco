@@ -37,7 +37,7 @@ beforeEach(async () => {
   } as NewsInterface);
 
   const response = await request(app).get("/news");
-  snippedId = response.body[0]._id;
+  snippedId = response.body[1]._id;
 });
 
 afterEach(async () => {
